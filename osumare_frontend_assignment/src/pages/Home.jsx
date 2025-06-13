@@ -6,6 +6,8 @@ import JoinNow from "../components/ui/JoinNow";
 import Footer from "../components/ui/Footer";
 import { Dialog } from "@headlessui/react";
 import { useState } from "react";
+import { TiTick } from "react-icons/ti";
+
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -14,6 +16,7 @@ export default function Home() {
     gender: "",
     email: "",
     languages: [],
+    timestamp: "",
   });
   const [errors, setErrors] = useState({});
   const [submissions, setSubmissions] = useState([]);
@@ -63,6 +66,7 @@ export default function Home() {
       gender: "",
       email: "",
       languages: [],
+      timestamp: "",
     });
 
     closeModal();
@@ -151,7 +155,7 @@ export default function Home() {
                 </div>
                 {/* GENDER */}
                 <div>
-                  <label className=" font-dmSans block font-medium mb-1">
+                  <label className="font-dmSans block font-medium mb-1">
                     Gender
                   </label>
                   <div className="flex gap-4">
@@ -160,13 +164,31 @@ export default function Home() {
                         key={label}
                         className="flex items-center gap-2 bg-red-50 p-2 rounded cursor-pointer"
                       >
-                        <input
-                          type="radio"
-                          name="gender"
-                          value={label}
-                          checked={formData.gender === label}
-                          onChange={handleChange}
-                        />
+                        <div className="relative">
+                          <input
+                            type="radio"
+                            name="gender"
+                            value={label}
+                            checked={formData.gender === label}
+                            onChange={handleChange}
+                            className="absolute opacity-0 w-5 h-5 cursor-pointer"
+                          />
+                          <div
+                            className={`w-5 h-5 rounded-full bg-red-50 border-2 flex items-center justify-center transition-colors duration-200  ${
+                              formData.gender === label
+                                ? "border-red-500"
+                                : "border-gray-300"
+                            }`}
+                          >
+                            <div
+                              className={`w-2.5 h-2.5 rounded-full bg-red-500 transition-opacity duration-200 ${
+                                formData.gender === label
+                                  ? "opacity-100"
+                                  : "opacity-0"
+                              }`}
+                            ></div>
+                          </div>
+                        </div>
                         {label}
                       </label>
                     ))}
@@ -183,13 +205,31 @@ export default function Home() {
                         key={lang}
                         className="flex items-center gap-2 bg-red-50 p-2 rounded cursor-pointer"
                       >
-                        <input
-                          type="checkbox"
-                          name="languages"
-                          value={lang}
-                          onChange={handleChange}
-                          checked={formData.languages.includes(lang)}
-                        />
+                        <div className="relative">
+                          <input
+                            type="checkbox"
+                            name="languages"
+                            value={lang}
+                            onChange={handleChange}
+                            checked={formData.languages.includes(lang)}
+                            className="absolute opacity-0 w-5 h-5 cursor-pointer"
+                          />
+                          <div
+                            className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-colors duration-200 ${
+                              formData.languages.includes(lang)
+                                ? "bg-red-500 border-red-500"
+                                : "bg-white border-gray-300"
+                            }`}
+                          >
+                            <TiTick
+                              className={`w-3 h-3 text-white transition-opacity duration-200 ${
+                                formData.languages.includes(lang)
+                                  ? "opacity-100"
+                                  : "opacity-0"
+                              }`}
+                            />
+                          </div>
+                        </div>
                         {lang}
                       </label>
                     ))}
@@ -276,11 +316,12 @@ export default function Home() {
             <table className="min-w-full bg-white rounded-xl">
               <thead className="bg-gray-100 text-gray-700">
                 <tr>
-                  <th className="px-4 py-3 text-left"></th>
-                  <th className="px-4 py-3 text-left">Name</th>
-                  <th className="px-4 py-3 text-left">Gender</th>
-                  <th className="px-4 py-3 text-left">Language</th>
-                  <th className="px-4 py-3 text-left">Email</th>
+                  <th className="px-4 py-3 text-center"></th>
+                  <th className="px-4 py-3 text-center">Name</th>
+                  <th className="px-4 py-3 text-center">Gender</th>
+                  <th className="px-4 py-3 text-center">Language</th>
+                  <th className="px-4 py-3 text-center">Email</th>
+                  <th className="px-4 py-3 text-center">TimeStamp</th>
                 </tr>
               </thead>
               <tbody>
@@ -292,12 +333,15 @@ export default function Home() {
                     <td className="px-4 py-3">
                       <input type="checkbox" />
                     </td>
-                    <td className="px-4 py-3">
+                    <td className="px-4 py-3 text-center">
                       {item.firstName} {item.lastName}
                     </td>
-                    <td className="px-4 py-3">{item.gender}</td>
-                    <td className="px-4 py-3">{item.languages.join(", ")}</td>
-                    <td className="px-4 py-3">{item.email}</td>
+                    <td className="px-4 py-3 text-center">{item.gender}</td>
+                    <td className="px-4 py-3 text-center">
+                      {item.languages.join(", ")}
+                    </td>
+                    <td className="px-4 py-3 text-center">{item.email}</td>
+                    <td className="px-4 py-3 text-center">{item.timestamp}</td>
                   </tr>
                 ))}
                 {submissions.length === 0 && (
