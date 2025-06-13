@@ -1,5 +1,4 @@
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 export default function Testimonial() {
   return (
     <div className="py-12 bg-white">

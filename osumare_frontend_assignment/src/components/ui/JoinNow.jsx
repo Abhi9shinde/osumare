@@ -1,21 +1,21 @@
 export default function JoinNow() {
   return (
-    <div className="flex flex-row mx-40 items-center justify-between my-10">
+    <div className="flex flex-col lg:flex-row items-center justify-between my-10 px-6 lg:px-40 gap-10">
       <img
         src="/phone.jpg"
         alt="Phone displaying app"
-        className="w-[585px] h-[395px] object-cover shadow-md"
+        className="w-full max-w-[585px] h-auto lg:h-[395px] object-cover shadow-md"
       />
 
-      <div className="max-w-xl">
-        <p className="font-roboto font-bold text-5xl text-[#202020] mb-6 leading-tight">
-          Start Organizing Your <br /> Life Today
+      <div className="w-full max-w-xl text-center lg:text-left">
+        <p className="font-roboto font-bold text-3xl sm:text-4xl lg:text-5xl text-[#202020] mb-6 leading-tight">
+          Start Organizing Your <br className="hidden sm:block" /> Life Today
         </p>
-        <p className="font-roboto font-normal text-lg text-[#333333] mb-8">
+        <p className="font-roboto font-normal text-base sm:text-lg text-[#333333] mb-8">
           Join us now and transform your productivity with our intuitive to-do
           list platform!
         </p>
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
           <button className="font-dmSans font-bold text-base px-8 py-3 bg-[#FF3E54] text-white hover:bg-[#e84157] transition duration-200">
             Sign Up
           </button>

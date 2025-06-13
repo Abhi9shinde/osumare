@@ -1,6 +1,6 @@
 export default function FeatureCard({ imag, num, title, desc }) {
   return (
-    <div className="w-70 h-80 bg-[#F5F5F5] rounded-xl p-6 shadow-sm relative border border-gray-200">
+    <div className="w-[280px] h-80 bg-[#F5F5F5] rounded-xl p-6 shadow-sm relative border border-gray-200 sm:w-[300px] md:w-[270px] lg:w-70">
       <div className="flex justify-between items-start">
         <div className="bg-white p-4 rounded-lg">
           <img src={imag} alt="Feature Icon" className="w-8 h-8" />
