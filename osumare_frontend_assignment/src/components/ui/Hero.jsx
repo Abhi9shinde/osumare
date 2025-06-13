@@ -1,3 +1,4 @@
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 export default function Hero({ openModal }) {
   return (
     <div className="bg-[#F7F7FB] px-4 sm:px-8">
@@ -18,7 +19,6 @@ export default function Hero({ openModal }) {
         </p>
       </div>
 
-      {/* CTA Buttons */}
       <div className="flex flex-col sm:flex-row justify-center items-center sm:space-x-6 space-y-4 sm:space-y-0 mt-8">
         <button
           onClick={openModal}
@@ -74,19 +74,33 @@ export default function Hero({ openModal }) {
           <div className="absolute bottom-0 w-full h-full bg-gradient-to-b from-[#FF3E54]/30 to-transparent"></div>
           <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-white/90 to-transparent"></div>
           <div className="absolute inset-0 text-white p-4 sm:p-6 flex flex-col justify-between">
-            <div className="pt-2 sm:pt-4">
-              <p className="font-bold opacity-50 text-2xl sm:text-4xl">
-                Your Tasks.
-              </p>
-              <p className="font-bold text-2xl sm:text-4xl">Our Tools.</p>
+            <div className="flex gap-17 pt-2 sm:pt-4">
+              <div>
+                <p className="font-bold opacity-50 text-2xl sm:text-4xl">
+                  Your Tasks.
+                </p>
+                <p className="font-bold text-2xl sm:text-4xl">Our Tools.</p>
+              </div>
+              <div className="flex items-center justify-center space-x-3 opacity-90">
+                {/* Active Dot */}
+                <span className="w-3 h-3 rounded-full bg-white "></span>
+
+                {/* Inactive Dots */}
+                <span className="w-3 h-3 rounded-full border border-white"></span>
+                <span className="w-3 h-3 rounded-full border border-white"></span>
+              </div>
+            </div>
+            <div className="flex justify-between items-center mt-4 sm:mt-6">
+              <IoIosArrowBack className="w-7 h-7" />
+              <IoIosArrowForward className="w-7 h-7" />
             </div>
             <div>
               <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
                 {/* Logo and Info */}
-                <div className="flex items-start space-x-3">
+                <div className="space-x-3 m-5">
                   <img
                     src="/logoipsum.png"
-                    className="w-20 h-8 sm:w-28 sm:h-10 mt-1"
+                    className="w-18 h-9 sm:w-28 sm:h-10 mt-1 mb-4"
                     alt="logo"
                   />
                   <div>

@@ -279,7 +279,6 @@ export default function Home() {
             </Dialog.Panel>
           </div>
         </Dialog>
-
         {/* Thank You Popup */}
         <Dialog
           open={showThankYou}
@@ -308,53 +307,59 @@ export default function Home() {
             </Dialog.Panel>
           </div>
         </Dialog>
-
         {/* Submission Table */}
-        <div className="mt-10">
-          <h2 className="text-xl font-semibold mb-4">Submitted Details</h2>
-          <div className="w-full overflow-x-auto rounded-xl shadow-md">
-            <table className="min-w-[600px] w-full bg-white rounded-xl text-sm">
-              <thead className="bg-gray-100 text-gray-700">
-                <tr>
-                  <th className="px-4 py-3 text-center"></th>
-                  <th className="px-4 py-3 text-center">Name</th>
-                  <th className="px-4 py-3 text-center">Gender</th>
-                  <th className="px-4 py-3 text-center">Language</th>
-                  <th className="px-4 py-3 text-center">Email</th>
-                  <th className="px-4 py-3 text-center">TimeStamp</th>
-                </tr>
-              </thead>
-              <tbody>
-                {submissions.map((item, index) => (
-                  <tr
-                    key={index}
-                    className="border-t border-gray-200 hover:bg-gray-50 transition"
-                  >
-                    <td className="px-4 py-3 text-center">
-                      <input type="checkbox" />
-                    </td>
-                    <td className="px-4 py-3 text-center">
-                      {item.firstName} {item.lastName}
-                    </td>
-                    <td className="px-4 py-3 text-center">{item.gender}</td>
-                    <td className="px-4 py-3 text-center">
-                      {item.languages.join(", ")}
-                    </td>
-                    <td className="px-4 py-3 text-center">{item.email}</td>
-                    <td className="px-4 py-3 text-center">{item.timestamp}</td>
-                  </tr>
-                ))}
-                {submissions.length === 0 && (
+        {submissions.length > 0 && (
+          <div className="mt-10">
+            <h2 className="text-xl font-semibold mb-4">Submitted Details</h2>
+            <div className="w-full overflow-x-auto rounded-xl shadow-md">
+              <table className="min-w-[600px] w-full bg-white rounded-xl text-sm">
+                <thead className="bg-gray-100 text-gray-700">
                   <tr>
-                    <td colSpan="6" className="text-center py-4 text-gray-500">
-                      No submissions yet.
-                    </td>
+                    <th className="px-4 py-3 text-center"></th>
+                    <th className="px-4 py-3 text-center">Name</th>
+                    <th className="px-4 py-3 text-center">Gender</th>
+                    <th className="px-4 py-3 text-center">Language</th>
+                    <th className="px-4 py-3 text-center">Email</th>
+                    <th className="px-4 py-3 text-center">TimeStamp</th>
                   </tr>
-                )}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {submissions.map((item, index) => (
+                    <tr
+                      key={index}
+                      className="border-t border-gray-200 hover:bg-gray-50 transition"
+                    >
+                      <td className="px-4 py-3 text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td className="px-4 py-3 text-center">
+                        {item.firstName} {item.lastName}
+                      </td>
+                      <td className="px-4 py-3 text-center">{item.gender}</td>
+                      <td className="px-4 py-3 text-center">
+                        {item.languages.join(", ")}
+                      </td>
+                      <td className="px-4 py-3 text-center">{item.email}</td>
+                      <td className="px-4 py-3 text-center">
+                        {item.timestamp}
+                      </td>
+                    </tr>
+                  ))}
+                  {submissions.length === 0 && (
+                    <tr>
+                      <td
+                        colSpan="6"
+                        className="text-center py-4 text-gray-500"
+                      >
+                        No submissions yet.
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       <Footer />
