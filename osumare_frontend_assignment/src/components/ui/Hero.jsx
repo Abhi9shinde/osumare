@@ -91,8 +91,8 @@ export default function Hero({ openModal }) {
               </div>
             </div>
             <div className="flex justify-between items-center mt-4 sm:mt-6">
-              <IoIosArrowBack className="w-7 h-7" />
-              <IoIosArrowForward className="w-7 h-7" />
+              <IoIosArrowBack className="w-7 h-7 cursor-pointer" />
+              <IoIosArrowForward className="w-7 h-7 cursor-pointer" />
             </div>
             <div>
               <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
@@ -116,7 +116,7 @@ export default function Hero({ openModal }) {
                   <img
                     src="/playIcon.png"
                     alt="Play"
-                    className="w-10 h-10 sm:w-14 sm:h-14"
+                    className="w-10 h-10 sm:w-14 sm:h-14 cursor-pointer"
                   />
                 </div>
               </div>
