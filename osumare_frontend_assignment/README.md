@@ -1,12 +1,55 @@
-# React + Vite
+# 📋 Osumare Landing Page Task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive landing page built using **React** and **Tailwind CSS**, featuring a modal form that collects user information and dynamically displays submissions in a table without page reload.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- **🖱️ Modal Form on Button Click**  
+  - Clicking the **"Get Started"** button opens a centered pop-up form.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **📝 Form Fields**  
+  - Name  
+  - Email  
+  - Gender
+  - Languages
+  *(Additional fields can be added easily)*
+
+- **✅ Validation**
+  - Mandatory fields must be filled
+  - Proper email format required
+  - Displays error messages on invalid input
+
+- **📩 Thank You Confirmation**
+  - After submitting the form, a pop-up message confirms:
+    > _"Thank you for your interest! We’ll get back to you soon."_
+
+- **📊 Live Submission Table**
+  - Submitted data instantly appears in a table at the bottom of the page
+  - Columns:
+    - Name
+    - Email
+    - Submission Timestamp
+  - No page refresh required
+
+- **💻 Responsive Design**
+  - Fully mobile-friendly
+  - Styled using **Tailwind CSS** as per Figma design
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React.js  
+- **Styling**: Tailwind CSS  
+- **State Management**: React `useState`  
+- **Date Handling**: JavaScript `Date.toLocaleString()`  
+
+---
+
+## 📦 Installation & Setup
+
+```bash
+npm install
+npm start
