@@ -1,12 +1,13 @@
 export default function JoinNow() {
   return (
     <div className="flex flex-col lg:flex-row items-center justify-between my-10 px-6 lg:px-40 gap-10">
+      {/* Image  */}
       <img
         src="/phone.jpg"
         alt="Phone displaying app"
         className="w-full max-w-[585px] h-auto lg:h-[395px] object-cover shadow-md"
       />
-
+      {/* Main Content  */}
       <div className="w-full max-w-xl text-center lg:text-left">
         <p className="font-roboto font-bold text-3xl sm:text-4xl lg:text-5xl text-[#202020] mb-6 leading-tight">
           Start Organizing Your <br className="hidden sm:block" /> Life Today

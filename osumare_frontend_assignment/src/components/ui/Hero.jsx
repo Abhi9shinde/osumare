@@ -18,7 +18,7 @@ export default function Hero({ openModal }) {
           lifestyle.
         </p>
       </div>
-
+      {/* Button, here openModal function is also taken from parent */}
       <div className="flex flex-col sm:flex-row justify-center items-center sm:space-x-6 space-y-4 sm:space-y-0 mt-8">
         <button
           onClick={openModal}

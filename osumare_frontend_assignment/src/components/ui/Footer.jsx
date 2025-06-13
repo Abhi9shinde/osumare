@@ -33,6 +33,7 @@ export default function Footer() {
         </div>
 
         {/* Right Column */}
+        {/* Useful Links  */}
         <div className="flex flex-col sm:flex-row flex-wrap gap-34 justify-between">
           <div>
             <h4 className="font-semibold mb-3">Useful Links</h4>
@@ -54,7 +55,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
+          {/* Resources  */}
           <div>
             <h4 className="font-semibold mb-3">Resources</h4>
             <ul className="space-y-4 text-sm">
@@ -75,7 +76,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
+          {/* Contacts  */}
           <div>
             <h4 className="font-semibold mb-3">Connect With Us</h4>
             <ul className="space-y-4 text-sm">
