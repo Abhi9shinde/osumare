@@ -4,7 +4,7 @@ A modern and responsive landing page built using **React** and **Tailwind CSS**,
 
 ---
 ## Live Link
-[Live Link](osumare-azure.vercel.app)
+osumare-azure.vercel.app
 
 ## 🚀 Features
 
