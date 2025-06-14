@@ -3,6 +3,8 @@
 A modern and responsive landing page built using **React** and **Tailwind CSS**, featuring a modal form that collects user information and dynamically displays submissions in a table without page reload.
 
 ---
+## Live Link
+osumare-azure.vercel.app
 
 ## 🚀 Features
 
